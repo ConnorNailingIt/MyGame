@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
 {
     private void OnMouseDown()
     {
+        Debug.Log(transform.position);
         Game.events.publishSelectedTile(gameObject);
     }
 }
