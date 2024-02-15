@@ -9,7 +9,7 @@ using UnityEngine.Rendering;
 public class Ship : MonoBehaviour
 {
     [Range(0f, 1f)]
-    public float duration = 0f;
+    public float duration;
 
     private GameObject tileCopy;
     private void OnDestroy()
@@ -22,9 +22,18 @@ public class Ship : MonoBehaviour
         Game.events.tileSelected += GetTile;
     }
 
+    private void Update()
+    {
+        if(tileCopy != null) {
+            transform.position = Vector3.Lerp(transform.position, tileCopy.transform.position, duration);
+            //duration += Time.deltaTime * 0.25f;
+        }
+        
+    }
     public void GetTile(GameObject tile)
     {
+        duration = 0f;
         tileCopy = tile;
-        iTween.MoveTo(gameObject, iTween.Hash("position", tile, "speed", duration, "easeType", "easeInOutQuad", "looktarget", tile));
+        //iTween.MoveTo(gameObject, iTween.Hash("position", tileCopy, "speed", duration, "easeType", "easeInOutQuad", "looktarget", tileCopy));
     }
 }
