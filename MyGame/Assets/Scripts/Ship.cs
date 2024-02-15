@@ -22,14 +22,9 @@ public class Ship : MonoBehaviour
         Game.events.tileSelected += GetTile;
     }
 
-    private void Update()
-    {
-        transform.position = Vector3.Lerp(transform.position, tileCopy.transform.position, duration);
-        duration += Time.deltaTime;
-    }
     public void GetTile(GameObject tile)
     {
-        duration = 0f;
         tileCopy = tile;
+        iTween.MoveTo(gameObject, iTween.Hash("position", tile, "speed", duration, "easeType", "easeInOutQuad", "looktarget", tile));
     }
 }
