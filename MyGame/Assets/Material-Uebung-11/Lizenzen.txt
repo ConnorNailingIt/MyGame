@@ -1,0 +1,9 @@
+Asset-Quellen in diesem Paket: 
+
+- /obj und /tiles Objektmodelle - Lizenz: CC0
+  von Kay Lousberg, https://kaylousberg.itch.io/kaykit-medieval-builder-pack
+  KayKit - Medieval Builder Pack
+
+- OutlineEffectMinimal - Lizenz: MIT
+  von José Guerreiro, https://github.com/cakeslice/Outline-Effect
+

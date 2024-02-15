@@ -9,8 +9,11 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Ship : MonoBehaviour
 {
-    [Range(0f, 1f)]
-    public float duration;
+    [Range(0f, 10f)]
+    public float travelDuration;
+
+    [Range(0f, 10f)]
+    public float shipElevation;
 
     private GameObject tileCopy;
     private void OnDestroy()
@@ -27,8 +30,15 @@ public class Ship : MonoBehaviour
     {
         tileCopy = tile;
 
-        Vector3 moveTarget = new Vector3(tile.transform.position.x, transform.position.y + tile.transform.position.y, tile.transform.position.z);
-        Vector3 lookTarget = new Vector3(transform.position.x, tile.transform.position.y + transform.position.y, transform.position.z);
-        iTween.MoveTo(gameObject, iTween.Hash("position", moveTarget, "speed", duration, "easeType", "easeInOutQuad", "looktarget", lookTarget));
+        Vector3 moveTarget = new Vector3(tile.transform.position.x, tile.transform.position.y + shipElevation, tile.transform.position.z);
+        //Vector3 lookTarget = new Vector3(transform.position.x, tile.transform.position.y + transform.position.y, transform.position.z);
+        Vector3 lookTarget = tile.transform.position;   
+
+        iTween.MoveTo(gameObject, iTween.Hash("position", moveTarget, "speed", travelDuration, "easeType", "easeInOutQuad", "axis", "y", "looktarget", lookTarget));
+    }
+
+    private void CollisionDetection()
+    {
+
     }
 }
