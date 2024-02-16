@@ -2062,6 +2062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingDutchman
       objectReference: {fileID: 0}
+    - target: {fileID: 6444512162268432, guid: d4f2a95e4c926544f8dff2dce6100620, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 818869614617206698, guid: d4f2a95e4c926544f8dff2dce6100620, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8
@@ -5261,6 +5265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1483516435}
+  followTransform: {fileID: 0}
   normalSpeed: 0.5
   fastSpeed: 2
   movementSpeed: 1
@@ -5270,6 +5275,10 @@ MonoBehaviour:
   newPosition: {x: 0, y: 0, z: 0}
   newRotation: {x: 0, y: 0, z: 0, w: 0}
   newZoom: {x: 0, y: 0, z: 0}
+  dragStartPosition: {x: 0, y: 0, z: 0}
+  dragCurrentPosition: {x: 0, y: 0, z: 0}
+  rotateStartPosition: {x: 0, y: 0, z: 0}
+  rotateCurrentPosition: {x: 0, y: 0, z: 0}
 --- !u!4 &1221266622
 Transform:
   m_ObjectHideFlags: 0
