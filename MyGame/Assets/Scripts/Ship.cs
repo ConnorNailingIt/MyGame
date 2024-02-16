@@ -25,7 +25,18 @@ public class Ship : MonoBehaviour
     {
         Game.events.tileSelected += GetTile;
     }
+    private void Update()
+    {
+        activateShip();
+    }
 
+    public void activateShip()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            CameraController.instance.followTransform = transform;
+        }
+    }
     public void GetTile(GameObject tile)
     {
         tileCopy = tile;
